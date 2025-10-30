@@ -7,256 +7,187 @@
 
 <style>
 /* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #fafafa;
-    color: #333;
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
-    overflow-x: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: #ffffff;
-    padding: 20px 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
 }
 header h1 {
-    font-size: 1.8rem;
-    color: #007bff;
-    font-weight: 700;
-    text-transform: uppercase;
+  color: #007bff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* ===== BOTÕES DARK MODE ===== */
-.theme-buttons {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    display: flex;
-    gap: 8px;
-}
-.theme-buttons button {
-    background: none;
-    border: 1px solid #007bff;
-    border-radius: 20px;
-    padding: 5px 10px;
-    color: #007bff;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-.theme-buttons button:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* ===== CATEGORIAS + PESQUISA ===== */
+/* ===== CATEGORIAS / PESQUISA ===== */
 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-}
-.search-bar input {
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    width: 250px;
-    transition: 0.3s;
-}
-.search-bar input:focus {
-    border-color: #007bff;
-    outline: none;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
 }
 .category {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: 0.3s;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.category:hover {
-    background-color: #0056b3;
+.category:hover { background-color: #0056b3; }
+.search-bar input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px;
+  width: 240px;
 }
 
 /* ===== CARROSSEL ===== */
 .carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ddd;
 }
 .carousel-container {
-    display: flex;
-    transition: transform 0.8s ease;
+  display: flex;
+  transition: transform 0.8s ease;
 }
 .carousel-item {
-    min-width: 100%;
+  min-width: 100%;
+  height: 380px;
 }
 .carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
 }
 .carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    padding: 12px 18px;
-    font-size: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.carousel button:hover {
-    background-color: rgba(0,0,0,0.8);
-}
+.carousel button:hover { background-color: rgba(0,0,0,0.8); }
 .prev { left: 20px; }
 .next { right: 20px; }
 
 /* ===== CONTAINER PRINCIPAL ===== */
 .main-container {
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* ===== TÍTULOS ===== */
+/* ===== SEÇÃO ===== */
 .section-title {
-    position: relative;
-    text-align: center;
-    margin: 40px 0 25px;
-    font-size: 1.8rem;
-    color: #007bff;
-    font-weight: bold;
+  text-align: center;
+  color: #007bff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  position: relative;
 }
-.section-title::before,
 .section-title::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 30%;
-    height: 2px;
-    background-color: #007bff33;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
-.section-title::before { left: 0; }
-.section-title::after { right: 0; }
+
+/* ===== DESTAQUES ===== */
+.highlight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.highlight-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.highlight-card img:hover { transform: scale(1.03); }
 
 /* ===== PRODUTOS ===== */
 .product-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .product-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 .product-card p {
-    font-weight: 500;
-    margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 .product-card span {
-    color: #007bff;
-    font-weight: bold;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.product-card s {
+  color: #888;
+  font-weight: normal;
+  margin-right: 5px;
 }
 
-/* ===== WHATSAPP ===== */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: 0.3s;
-    z-index: 200;
-}
-.whatsapp-btn:hover {
-    background-color: #1ebd5a;
-    transform: scale(1.05);
-}
-
-/* ===== RODAPÉ ===== */
+/* ===== FOOTER ===== */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    margin-top: 40px;
-    color: #888;
-}
-
-/* ===== DARK MODE ===== */
-body.dark {
-    background-color: #121212;
-    color: #eee;
-}
-body.dark header,
-body.dark .categories,
-body.dark footer {
-    background-color: #1c1c1c;
-    border-color: #333;
-}
-body.dark .product-card {
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
-}
-
-/* ===== TRANSIÇÕES ===== */
-body.fade-transition {
-    transition: background-color 0.6s ease, color 0.6s ease;
-}
-body.slide-transition {
-    animation: slideTheme 0.5s ease;
-}
-@keyframes slideTheme {
-    from { transform: translateX(20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  background: #fff;
+  border-top: 1px solid #eee;
 }
 </style>
 </head>
@@ -264,80 +195,52 @@ body.slide-transition {
 <body>
 
 <header>
-    <h1>Catálogo de Produtos</h1>
-    <div class="theme-buttons">
-        <button id="fadeModeBtn">🌙 Fade</button>
-        <button id="slideModeBtn">🌙 Slide</button>
-    </div>
+  <h1>Catálogo de Produtos</h1>
 </header>
 
 <section class="categories">
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar produtos...">
-    </div>
+  <button class="category" id="btn-todos">Todos</button>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar produtos...">
+  </div>
 </section>
 
+<!-- Carrossel de banners -->
 <section class="carousel">
-    <div class="carousel-container">
-        <div class="carousel-item"><img src="https://picsum.photos/1920/400?random=1" alt="Banner 1"></div>
-        <div class="carousel-item"><img src="https://picsum.photos/1920/400?random=2" alt="Banner 2"></div>
-        <div class="carousel-item"><img src="https://picsum.photos/1920/400?random=3" alt="Banner 3"></div>
-    </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+  <div class="carousel-container"></div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
 </section>
 
-<section class="main-container">
-    <h2 class="section-title">Produtos</h2>
-    <div class="product-cards"></div>
-</section>
+<main class="main-container">
+  <h2 class="section-title">Destaques</h2>
+  <div class="highlight-cards"></div>
 
-<a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-btn" title="Fale conosco no WhatsApp">💬</a>
+  <h2 class="section-title">Produtos</h2>
+  <div class="product-cards"></div>
+</main>
 
 <footer>
-    © 2025 Catálogo de Produtos - Todos os direitos reservados.
+  © 2025 Catálogo de Produtos - Todos os direitos reservados.
 </footer>
 
 <script>
-/* ===== CARROSSEL ===== */
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const container = document.querySelector('.carousel-container');
-document.querySelector('.next').addEventListener('click', () => showSlide(currentSlide + 1));
-document.querySelector('.prev').addEventListener('click', () => showSlide(currentSlide - 1));
-function showSlide(index) {
-    if (index >= slides.length) currentSlide = 0;
-    else if (index < 0) currentSlide = slides.length - 1;
-    else currentSlide = index;
-    container.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-setInterval(() => showSlide(currentSlide + 1), 4000);
+const spreadsheetId = '1_zUUbQCxJReQ9qcd-M9ADlogIl-d-Vo2volYSc6eQAY'; // substitua pelo ID da sua planilha
 
-/* ===== DARK MODE ===== */
-document.getElementById('fadeModeBtn').addEventListener('click', () => toggleDarkMode('fade'));
-document.getElementById('slideModeBtn').addEventListener('click', () => toggleDarkMode('slide'));
-function toggleDarkMode(type) {
-    document.body.classList.toggle('dark');
-    document.body.classList.remove('fade-transition', 'slide-transition');
-    if (type === 'fade') document.body.classList.add('fade-transition');
-    else if (type === 'slide') document.body.classList.add('slide-transition');
-}
-
-/* ===== GOOGLE SHEETS ===== */
-const spreadsheetId = '1_zUUbQCxJReQ9qcd-M9ADlogIl-d-Vo2volYSc6eQAY'; // substitua pelo ID da planilha
-const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`;
+const urlProdutos = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&sheet=produtos`;
+const urlBanners  = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&sheet=banners`;
 
 let produtos = [];
-let colIndex = {};
 
-fetch(url)
+/* === Carregar Produtos === */
+fetch(urlProdutos)
   .then(res => res.text())
   .then(txt => {
     const jsonStr = txt.match(/(?<=\().*(?=\);)/s)[0];
     const json = JSON.parse(jsonStr);
-
     const cols = json.table.cols.map(c => c.label.trim().toLowerCase());
-    cols.forEach((colName, i) => colIndex[colName] = i);
+    const colIndex = {};
+    cols.forEach((col, i) => colIndex[col] = i);
 
     produtos = json.table.rows.map(row => {
       const c = row.c;
@@ -345,10 +248,10 @@ fetch(url)
         nome: c[colIndex['nome']]?.v || '',
         categoria: c[colIndex['categoria']]?.v || '',
         preco: c[colIndex['preço']]?.v || '',
+        desconto: c[colIndex['desconto']]?.v || '',
+        imagem: c[colIndex['imagem']]?.v || '',
         link: c[colIndex['link']]?.v || '#',
-        imagem: c[colIndex['imagem']]?.v || 'https://via.placeholder.com/300x200',
-        ativo: c[colIndex['ativo']]?.v ?? true,
-        desconto: c[colIndex['desconto']]?.v || ''
+        ativo: c[colIndex['ativo']]?.v ?? true
       };
     }).filter(p => p.ativo);
 
@@ -357,53 +260,110 @@ fetch(url)
   })
   .catch(console.error);
 
-/* ===== RENDER PRODUTOS ===== */
-function renderProdutos(lista) {
-  const container = document.querySelector('.product-cards');
+/* === Carregar Banners === */
+fetch(urlBanners)
+  .then(res => res.text())
+  .then(txt => {
+    const jsonStr = txt.match(/(?<=\().*(?=\);)/s)[0];
+    const json = JSON.parse(jsonStr);
+    const cols = json.table.cols.map(c => c.label.trim().toLowerCase());
+    const colIndex = {};
+    cols.forEach((col, i) => colIndex[col] = i);
+
+    const dados = json.table.rows.map(row => {
+      const c = row.c;
+      return {
+        tipo: c[colIndex['tipo']]?.v || '',
+        imagem: c[colIndex['imagem']]?.v || '',
+        link: c[colIndex['link']]?.v || '#',
+        ativo: c[colIndex['ativo']]?.v ?? true
+      };
+    }).filter(d => d.ativo);
+
+    const carrossel = dados.filter(d => d.tipo.toLowerCase() === 'carrossel');
+    const destaques = dados.filter(d => d.tipo.toLowerCase() === 'destaque');
+
+    renderCarrossel(carrossel);
+    renderDestaques(destaques);
+  })
+  .catch(console.error);
+
+/* === Renderizar Carrossel === */
+function renderCarrossel(lista) {
+  const container = document.querySelector('.carousel-container');
   container.innerHTML = '';
-  if (lista.length === 0) {
-    container.innerHTML = '<p>Nenhum produto encontrado.</p>';
-    return;
+  lista.forEach(b => {
+    const item = document.createElement('div');
+    item.classList.add('carousel-item');
+    item.innerHTML = `<a href="${b.link}" target="_blank"><img src="${b.imagem}" alt="banner"></a>`;
+    container.appendChild(item);
+  });
+
+  // controles
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+
+  function showSlide(i) {
+    if (i >= slides.length) currentSlide = 0;
+    else if (i < 0) currentSlide = slides.length - 1;
+    else currentSlide = i;
+    container.style.transform = `translateX(-${currentSlide * 100}%)`;
   }
-  lista.forEach(p => {
-    const card = document.createElement('div');
-    card.classList.add('product-card');
-    card.innerHTML = `
-      <a href="${p.link}" target="_blank">
-        <img src="${p.imagem}" alt="${p.nome}">
-      </a>
-      <p>${p.nome}</p>
-      <span>${p.desconto ? `<s>R$ ${p.preco}</s> <strong style="color:#e74c3c">R$ ${p.desconto}</strong>` : `R$ ${p.preco}`}</span>
-    `;
-    container.appendChild(card);
+  next.addEventListener('click', () => showSlide(currentSlide + 1));
+  prev.addEventListener('click', () => showSlide(currentSlide - 1));
+  setInterval(() => showSlide(currentSlide + 1), 5000);
+}
+
+/* === Renderizar Destaques === */
+function renderDestaques(lista) {
+  const container = document.querySelector('.highlight-cards');
+  container.innerHTML = '';
+  lista.forEach(d => {
+    const div = document.createElement('div');
+    div.classList.add('highlight-card');
+    div.innerHTML = `<a href="${d.link}" target="_blank"><img src="${d.imagem}" alt="Destaque"></a>`;
+    container.appendChild(div);
   });
 }
 
-/* ===== CATEGORIAS ===== */
+/* === Renderizar Produtos === */
+function renderProdutos(lista) {
+  const container = document.querySelector('.product-cards');
+  container.innerHTML = '';
+  lista.forEach(p => {
+    const div = document.createElement('div');
+    div.classList.add('product-card');
+    div.innerHTML = `
+      <a href="${p.link}" target="_blank"><img src="${p.imagem}" alt="${p.nome}"></a>
+      <p>${p.nome}</p>
+      <span>${p.desconto ? `<s>R$ ${p.preco}</s> <strong style="color:#e74c3c;">R$ ${p.desconto}</strong>` : `R$ ${p.preco}`}</span>
+    `;
+    container.appendChild(div);
+  });
+}
+
+/* === Categorias === */
 function populaCategorias() {
-  const catContainer = document.querySelector('.categories');
+  const container = document.querySelector('.categories');
   const searchBar = document.querySelector('.search-bar');
+  const btnTodos = document.getElementById('btn-todos');
+  container.innerHTML = '';
+  container.appendChild(btnTodos);
   const categorias = [...new Set(produtos.map(p => p.categoria).filter(Boolean))];
-  catContainer.innerHTML = '';
-  const todosBtn = document.createElement('button');
-  todosBtn.textContent = 'Todos';
-  todosBtn.classList.add('category');
-  todosBtn.addEventListener('click', () => renderProdutos(produtos));
-  catContainer.appendChild(todosBtn);
   categorias.forEach(cat => {
     const btn = document.createElement('button');
     btn.classList.add('category');
     btn.textContent = cat;
-    btn.addEventListener('click', () => {
-      const filtrados = produtos.filter(p => p.categoria === cat);
-      renderProdutos(filtrados);
-    });
-    catContainer.appendChild(btn);
+    btn.onclick = () => renderProdutos(produtos.filter(p => p.categoria === cat));
+    container.appendChild(btn);
   });
-  catContainer.appendChild(searchBar);
+  container.appendChild(searchBar);
+  btnTodos.onclick = () => renderProdutos(produtos);
 }
 
-/* ===== PESQUISA ===== */
+/* === Pesquisa === */
 document.querySelector('.search-bar input').addEventListener('input', e => {
   const termo = e.target.value.toLowerCase();
   const filtrados = produtos.filter(p => p.nome.toLowerCase().includes(termo));
@@ -413,4 +373,3 @@ document.querySelector('.search-bar input').addEventListener('input', e => {
 
 </body>
 </html>
-
